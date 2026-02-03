@@ -27,6 +27,9 @@ jobs:
           python -m pip install --upgrade pip
           pip install flake8 pytest # 검사 도구 설치
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+      - name: Run Tests
+        run: pytest  # 이 한 줄이 있어야 실제로 테스트가 돌아가서 "CI"의 의미가 완성됩니다!
+
       # --- [CI 영역 끝] ---
       # --- [CD 영역 시작: 도커 이미지 생성] ---
       # 1. 도커 허브 계정에 로그인합니다. (비밀번호 대신 Token 사용)
